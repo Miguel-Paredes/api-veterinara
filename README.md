@@ -21,6 +21,7 @@ Creación de el controlador veterinario con cada uno de los métodos y exportaci
 ### Creación del modelo del proyecto
 Uso de un esquema y métodos para realizar la recuperación tanto de contraseñas, además de la verificación mediante el uso de tokens.
 ![image](https://github.com/Alejandro-Moreira/api-veterinaria/assets/117743484/84b751a4-ee7f-46c3-8026-cb06f6afb70d)
+</br>
 ![image](https://github.com/Alejandro-Moreira/api-veterinaria/assets/117743484/07a38cf5-550f-4477-9f7a-1d27f4dbf1ad)
 ### Creación de las rutas del proyecto
 Creamos cada una de las rutas que va a tener nuestro proyecto, importandolas mediante el path de origen.
