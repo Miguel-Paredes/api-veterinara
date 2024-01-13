@@ -46,7 +46,7 @@ const veterinarioSchema = new Schema({
         type:Boolean,
         default:false
     }
-// (1<2) ? "si" : "no"
+
 },{
     timestamps:true
 })
