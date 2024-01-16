@@ -19,6 +19,9 @@ const verificarAutenticacion = async (req,res,next)=>{
             req.veterinarioBDD = await Veterinario.findById(id).lean().select("-password")
             // Continue el proceso
             next()
+        }else{
+            req.pacienteBDD = await Paciente.findById(id).lean().select("-password")
+            next()
         }
     } catch (error) {
         // Capturar errores y presentarlos

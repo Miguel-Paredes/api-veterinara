@@ -2,7 +2,7 @@
 import {Router} from 'express'
 
 // Importar verificarAutenticacion
-import verificarAutenticacion from '../middleware/autenticacion.js'
+import verificarAutenticacion from '../middlewares/autenticacion.js'
 
 
 // Crear una instancia de Router()
