@@ -1,7 +1,10 @@
 // Importar el modelo Paciente
 import Paciente from "../models/Paciente.js"
 
-// Importar mongoose
+// Importar el sendMailToPaciente
+import { sendMailToPaciente } from "../config/nodemailer.js"
+
+// Importar el sendMailToPaciente
 import mongoose from "mongoose"
 
 // Metodo para el proceso de login 
