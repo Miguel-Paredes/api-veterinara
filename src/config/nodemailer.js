@@ -49,7 +49,7 @@ const sendMailToRecoveryPassword = async(userMail,token)=>{
 }
 
 const sendMailToPaciente = async(userMail,password)=>{
-    let info = await transport.sendMail({
+    let info = await transporter.sendMail({
     from: 'admin@vet.com',
     to: userMail,
     subject: "Correo de bienvenida",

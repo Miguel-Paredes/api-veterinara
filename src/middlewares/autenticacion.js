@@ -1,6 +1,7 @@
 // Importar JWT y el Modelo
 import jwt from 'jsonwebtoken'
 import Veterinario from '../models/Veterinario.js'
+import Paciente from '../models/Paciente.js'
 
 // Metodo para proteger rutas
 const verificarAutenticacion = async (req,res,next)=>{
