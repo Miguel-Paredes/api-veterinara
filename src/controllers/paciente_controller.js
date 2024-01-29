@@ -7,8 +7,12 @@ import { sendMailToPaciente } from "../config/nodemailer.js"
 // Importar el generarJWT
 import generarJWT from "../helpers/crearJWT.js"
 
-// Importar el sendMailToPaciente
+// Importar el mongoose
 import mongoose from "mongoose"
+
+// Importar el Tratamiento
+import Tratamiento from "../models/Tratamiento.js"
+
 
 // Metodo para el proceso de login 
 const loginPaciente = async(req,res)=>{
@@ -52,7 +56,11 @@ const detallePaciente = async(req,res)=>{
     const {id} = req.params
     if( !mongoose.Types.ObjectId.isValid(id) ) return res.status(404).json({msg:`Lo sentimos, no existe el veterinario ${id}`});
     const paciente = await Paciente.findById(id).select("-createdAt -updatedAt -__v").populate('veterinario','_id nombre apellido')
-    res.status(200).json(paciente)
+    const tratamientos = await Tratamiento.find({estado:true}).where('paciente').equals(id)
+    res.status(200).json({
+        paciente,
+        tratamientos
+    })
 }
 // Metodo para registrar un paciente
 const registrarPaciente = async(req,res)=>{

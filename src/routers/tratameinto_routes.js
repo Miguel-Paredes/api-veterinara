@@ -1,7 +1,5 @@
 import {Router} from 'express'
 const router = Router()
-import verificarAutenticacion from "../middlewares/autenticacion.js";
-
 import {
     detalleTratamiento,
     registrarTratamiento,
@@ -10,22 +8,22 @@ import {
     cambiarEstado
 } from "../controllers/tratamiento_controller.js";
 
+import verificarAutenticacion from "../middlewares/autenticacion.js";
 
-router.post('/tratamiento/registro',verificarAutenticacion,registrarTratamiento)
-router
-    .route('/tratamiento/:id')
-    .get(verificarAutenticacion,detalleTratamiento)
-    .put(verificarAutenticacion,actualizarTratamiento)
-    .delete(verificarAutenticacion,eliminarTratamiento)
+// Ruta para crear el tratamiento
+router.post('/tratamiento/registro',verificarAutenticacion, registrarTratamiento)
 
-router.put('/tratamiento/estado/:id',verificarAutenticacion,cambiarEstado)
+// Ruta para ver el detalle del tratamiento
+router.get('/tratamiento/:id',verificarAutenticacion,detalleTratamiento)
 
+// Ruta para actualizar el tratamiento
+router.put('/tratamiento/:id',verificarAutenticacion,actualizarTratamiento)
 
-router.post('/tratamiento/registro',(req,res)=>res.send("Registrar tratamientos"))
-router.get('/tratamiento/:id',(req,res)=>res.send("Detalle del tratamiento"))
-router.put('/tratamiento/:id',(req,res)=>res.send("Actualizar tratamiento"))
-router.delete('/tratamiento/:id',(req,res)=>res.send("Eliminar tratamiento"))
-router.post('/tratamiento/estado/:id',(req,res)=>res.send("Listar tratamientos"))
+// Ruta para eliminar el tratamiento 
+router.delete('/tratamiento/:id',verificarAutenticacion,eliminarTratamiento)
+
+// Ruta para listar los tratamientos
+router.post('/tratamiento/estado/:id',verificarAutenticacion,cambiarEstado)
 
 
 export default router
