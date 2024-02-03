@@ -1,5 +1,6 @@
 import {Router} from 'express'
 const router = Router()
+import { validacionTratamiento } from '../middlewares/validacionTratamiento.js';
 import {
     detalleTratamiento,
     registrarTratamiento,
@@ -11,7 +12,7 @@ import {
 import verificarAutenticacion from "../middlewares/autenticacion.js";
 
 // Ruta para crear el tratamiento
-router.post('/tratamiento/registro',verificarAutenticacion, registrarTratamiento)
+router.post('/tratamiento/registro',verificarAutenticacion,validacionTratamiento,registrarTratamiento)
 
 // Ruta para ver el detalle del tratamiento
 router.get('/tratamiento/:id',verificarAutenticacion,detalleTratamiento)
