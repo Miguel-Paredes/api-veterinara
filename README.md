@@ -1,7 +1,7 @@
 # PRUEBA 2DO BIMESTRE 
 Api Veterinaria
 ## Proyecto Veterinaria y sprints
-Realización del Sprint 0 y Sprint 1 del proyecto.
+Implementación del Sprint 0 al 5 y “Deploy del backend a un ambiente de producción"
 ## Integrantes
 * Jared Valenzuela
 * Joseph Yépez
