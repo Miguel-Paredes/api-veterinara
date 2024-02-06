@@ -1,4 +1,4 @@
-# Laboratorio 19-20
+# PRUEBA 2DO BIMESTRE 
 Api Veterinaria
 ## Proyecto Veterinaria y sprints
 Realización del Sprint 0 y Sprint 1 del proyecto.
